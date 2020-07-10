@@ -1,0 +1,96 @@
+body {
+    margin: 0 50px;
+    padding-top: 77px;
+    font-family: 'Open Sans', sans-serif;
+}
+.infotext {
+    font-size: 15px;
+}
+.separator {
+    width: 100%;
+    border-top: #90caf9 2px solid;
+}
+.disabled {
+    pointer-events: none;
+    user-select: none;
+    color: gray;
+}
+
+#header-wrapper {
+    position: fixed;
+    height: 77px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: white;
+    border-bottom: rgb(224,244,244) 2px solid;
+}
+#header-logo {
+    width: 200px;
+    padding: 10px 0px 7px 0px;
+}
+
+#main-info {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.main-info-row {
+    margin: 20px 0px;
+    font-size: 20px;
+}
+.main-info-row:first-of-type {
+    margin-top: 5px;
+}
+#reconnect-btn {
+    color: #5d99c6;
+    cursor: default;
+    user-select: none;
+}
+
+#main-list {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.main-list-row {
+    min-height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.main-list-row + .main-list-row {
+    border-top: #90caf9 1px solid;
+}
+.name {
+    font-size: 20px;
+    flex-basis: 80%;
+}
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    clear: left;
+    margin-left: auto;
+}
+.upload-btn input[type="file"] {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    font-size: 100px;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+.upload-icon {
+    width: 25px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0 20px;
+    }
+}
