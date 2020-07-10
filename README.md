@@ -5,7 +5,7 @@
 
 This project is a submission for [HackTheLib](https://www.hackthelib.com).
 
-Video submission: [IPdrop presentation](https://raw.githubusercontent.com/scheng123/IPdrop/master/IPdrop_presentation.mp4)
+Video submission: [IPdrop presentation](https://www.youtube.com/watch?v=vjzhxo1SOBk)
 
 Target categories: Most Practical; Best Design
 
