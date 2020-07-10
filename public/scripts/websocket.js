@@ -122,12 +122,9 @@ function connect(){
                 if(parsed.action === 'STARTSEND'){
                     if(window.capture_transfer_send) window.capture_transfer_send(parsed);
                 }else if(parsed.action === 'STARTRECEIVE'){
-                    if(window.capture_transfer_receive) setTimeout(function(){
-                        window.capture_transfer_receive(parsed);
-                    }, 500);
                     if(window.capture_transfer_receive){
                         var didCallback = false;
-                        var wait_download_box = bootbox.dialog({message: `<div class="text-center"><i class="fa fa-spin fa-spinner"></i>Waiting for ${parsed.name} to begin upload</div>`});
+                        var wait_download_box = bootbox.dialog({message: `<div class="text-center"><i class="fa fa-spin fa-spinner"></i>Waiting for ${parsed.name} to begin upload</div>`, closeButton: false});
                         var interval_id = setInterval(async function(){
                             var response = await (await fetch('/downloadstatus?hash='+parsed.hash)).text();
                             if(!didCallback){
