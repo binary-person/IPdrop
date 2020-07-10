@@ -22,7 +22,7 @@ window.uploadHandler = function(event){
         // within the time limit that I have //
         window.capture_response = function(parsed){
             clearTimeout(timeout_id);
-            wait_box.modal('hide');
+            setTimeout(()=>wait_box.modal('hide'), 500);
             if(parsed.success){
                 // begin transfer //
                 // same garbage method //
@@ -40,7 +40,7 @@ window.uploadHandler = function(event){
                         document.querySelector('.progress-bar').style.width = (100*upload_event.loaded / upload_event.total).toFixed(2)+'%';
                     });
                     request.addEventListener('load', function() {
-                        progress_box.modal('hide');
+                        setTimeout(()=>progress_box.modal('hide'), 500);
                         if(request.status === 200){
                             bootbox.alert(`Uploaded ${event.target.files[0].name} to ${parsed.name}`);
                         }else if(request.status === 503){
