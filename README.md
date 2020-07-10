@@ -1,9 +1,13 @@
 # IPdrop
 [<img src='https://raw.githubusercontent.com/scheng123/IPdrop/master/public/images/logo.png'>](https://ipdrop-sc.herokuapp.com)
 
-## A quick note
+## Project submission
 
-This project is a submission for [HackTheLib](https://www.hackthelib.com). A video will be posted shortly after this commit.
+This project is a submission for [HackTheLib](https://www.hackthelib.com).
+
+Video submission: [IPdrop presentation](https://raw.githubusercontent.com/scheng123/IPdrop/master/IPdrop_presentation.mp4)
+
+Target categories: Most Practical; Best Design
 
 The live application can be found here: [IPdrop](https://ipdrop-sc.herokuapp.com)
 
