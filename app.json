@@ -1,0 +1,11 @@
+{
+    "name": "IPdrop",
+    "description": "Easily share files connected to the same IP",
+    "repository": "https://github.com/scheng123/IPdrop",
+    "logo": "https://rawcdn.githack.com/scheng123/IPdrop/9087f10345950c471d3e690ad51250c564b1ab51/public/favicon.ico",
+    "keywords": [
+        "airdrop",
+        "ip",
+        "file sharing"
+    ],
+}
