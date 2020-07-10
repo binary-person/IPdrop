@@ -56,6 +56,7 @@ module.exports = function(upload_download_hashes){
             res.setHeader('Content-Length', upload_download_hashes[hash].file_size);
             upload_download_hashes[hash].file_pipe.pipe(res);
             res.on('close', function(){
+                if(upload_download_hashes[hash] && upload_download_hashes[hash].file_pipe)
                 upload_download_hashes[hash].file_pipe.emit('end');
             });
         }else{
