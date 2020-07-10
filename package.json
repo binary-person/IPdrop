@@ -2,6 +2,7 @@
   "name": "ipdrop",
   "version": "1.0.0",
   "description": "Easily share files connected to the same IP",
+  "repository": "https://github.com/scheng123/IPdrop",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
