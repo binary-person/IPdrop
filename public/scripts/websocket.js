@@ -74,7 +74,7 @@ function connect(){
     };
     window.ws.onmessage = function(message){
         var parsed = JSON.parse(message.data);
-        if(parsed.type !== 'HEARTBEAT') console.log(parsed);
+        // if(parsed.type !== 'HEARTBEAT') console.log(parsed);
         switch(parsed.type){
             case 'INIT':
                 connection_name.textContent = 'Name: '+parsed.name;

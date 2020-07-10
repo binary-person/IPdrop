@@ -51,7 +51,6 @@ module.exports = function(upload_download_hashes){
     app.get('/download/*', function(req, res) {
         var hash = req.cookies.hash;
         if(hash && upload_download_hashes[hash] && !upload_download_hashes[hash].lock_download){
-            console.log('Locked download', hash);
             upload_download_hashes[hash].lock_download = true;
             res.setHeader('Content-Disposition', 'attachment');
             res.setHeader('Content-Length', upload_download_hashes[hash].file_size);
