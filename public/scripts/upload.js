@@ -40,12 +40,13 @@ window.uploadHandler = function(event){
                         document.querySelector('.progress-bar').style.width = (100*upload_event.loaded / upload_event.total).toFixed(2)+'%';
                     });
                     request.addEventListener('load', function() {
-                        if(request.status !== 200){
-                            progress_box.modal('hide');
-                            bootbox.alert('Something went wrong uploading: '+request.response);
-                        }else{
-                            progress_box.modal('hide');
+                        progress_box.modal('hide');
+                        if(request.status === 200){
                             bootbox.alert(`Uploaded ${event.target.files[0].name} to ${parsed.name}`);
+                        }else if(request.status === 503){
+                            bootbox.alert(parsed.name+' canceled the download');
+                        }else{
+                            bootbox.alert('Something went wrong uploading: '+request.response);
                         }
                     });
                     request.open('POST', '/upload?hash='+parsed.hash);
