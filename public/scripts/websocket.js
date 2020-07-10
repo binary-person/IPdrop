@@ -124,13 +124,13 @@ function connect(){
                 }else if(parsed.action === 'STARTRECEIVE'){
                     if(window.capture_transfer_receive){
                         var didCallback = false;
-                        var wait_download_box = bootbox.dialog({message: `<div class="text-center"><i class="fa fa-spin fa-spinner"></i>Waiting for ${parsed.name} to begin upload</div>`, closeButton: false});
+                        window.wait_download_box = bootbox.dialog({message: `<div class="text-center"><i class="fa fa-spin fa-spinner"></i>Waiting for ${parsed.name} to begin upload</div>`, closeButton: false});
                         var interval_id = setInterval(async function(){
                             var response = await (await fetch('/downloadstatus?hash='+parsed.hash)).text();
                             if(!didCallback){
                                 switch(response){
                                     case 'go':
-                                        wait_download_box.modal('hide');
+                                        window.wait_download_box.modal('hide');
                                         bootbox.alert('Started download');
                                         didCallback = true;
                                         clearInterval(interval_id);
@@ -139,7 +139,7 @@ function connect(){
                                     case 'wait':
                                         break;
                                     default:
-                                        wait_download_box.modal('hide');
+                                        window.wait_download_box.modal('hide');
                                         bootbox.alert('Uploader took too long to respond.');
                                         didCallback = true;
                                         clearInterval(interval_id);
