@@ -42,7 +42,7 @@ module.exports = function(upload_download_hashes){
     });
     app.get('/download', function(req, res) {
         if(upload_download_hashes[req.query.hash] && upload_download_hashes[req.query.hash].file_pipe){
-            res.cookie('hash', req.query.hash, {maxAge: 10000, sameSite: 'None'});
+            res.cookie('hash', req.query.hash, {maxAge: 10000, sameSite: 'None', secure: true});
             res.redirect('/download/'+upload_download_hashes[req.query.hash].file_name);
         }else{
             res.send('Invalid request'); // nobody to handle this lol
